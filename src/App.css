@@ -1,0 +1,216 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 5em;
+}
+
+h2 {
+  font-size: 4em;
+}
+
+h3 {
+  font-size: 3em;
+}
+
+h4 {
+  font-size: 2em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.5em;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: "Questrial";
+}
+
+.App-header {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  border-bottom: 1px solid #dedede;
+}
+
+.App-header > h1 {
+  margin: 0 5vw;
+  color: #D3B558;
+  font-family: 'SourceSerif';
+}
+
+.App-header > div {
+  width: 36px;
+  margin: 0 5vw;
+  color: #D3B558;
+  position: relative;
+}
+
+.counter {
+  width: 20px;
+    background: #C29974;
+    position: absolute;
+    top: 0;
+    right: -10px;
+    border-radius: 50%;
+    font-size: 1em;
+    text-align: center;
+    color: white;
+}
+
+.content {
+  padding: 1em;
+    display: grid;
+    grid-template-columns: calc(60% - 1em) calc(40% - 1em);
+    grid-template-rows: .5fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "image title"
+        "image type"
+        "image preview"
+        "image add";
+    grid-column-gap: 2em;
+    background: rgb(246,245,243);
+}
+
+.mattress-image {
+  grid-area: image;
+  text-align: center;
+}
+
+.choose {
+  grid-area: title;
+  font-weight: 100;
+  font-family: "SourceSerif";
+}
+
+.select-mattress {
+  grid-area: type;
+  display: flex;
+  flex-direction: column;
+}
+
+.select-mattress > div > h5{
+  font-family: 'Questrial';
+  font-weight: 100;
+  padding: 0.7em 0;
+}
+
+.preview {
+  grid-area: preview;
+}
+
+.preview > span {
+  padding: 1.5em;
+}
+
+.add-to-cart {
+  grid-area: add;
+}
+
+.options {
+  display: flex;
+}
+
+.options > button {
+  border: 1px solid #d3d3d3;
+  flex-grow: 1;
+  padding: 1em 1em;
+  font-size: 1em;
+  color: #6b6456;
+  background: white;
+  font-family: "Questrial";
+}
+
+.add-to-cart > button {
+  background: #D3B558;
+  color: white;
+  border: none;
+  font-family: "Questrial";
+  flex-grow: 1;
+  padding: 1em 1em;
+  font-size: 1em;
+  width: 100%;
+}
+
+.preview {
+  display: flex;
+    justify-content: space-between;
+}
+
+button.selected {
+  background: #A6A399;
+  color: white;
+}
+
+button:focus {
+  border: inherit;
+}
+
+@media (min-width: 850px) and (max-width: 1000px) {
+  
+  .content {
+    grid-template-columns: calc(50% - 1em) calc(50% - 1em);
+  }
+}
+
+@media (min-width: 450px) and (max-width: 849px) {
+
+  .content {
+    grid-template-columns: calc(100% - 2em);
+    grid-template-rows: .5fr auto 1fr 1fr 1fr;;
+    grid-template-areas: "title"
+                         "image"
+                         "type"
+                         "preview"
+                         "add";
+  }
+
+  .choose > h4 {
+    text-align: center;
+  }
+
+  .select-mattress > div > h5 {
+    text-align: center;
+  }
+}
+
+@media  (max-width: 449px) {
+
+  .content {
+    grid-template-columns: calc(100% - 2em);
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: "title"
+                         "image"
+                         "type"
+                         "preview"
+                         "add";
+  }
+
+  .choose > h4 {
+    text-align: center;
+  }
+
+  .select-mattress > div > h5 {
+    text-align: center;
+  }
+
+  .options {
+    flex-direction: column;
+  }
+}
